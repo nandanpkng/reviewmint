@@ -499,6 +499,87 @@ code {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+.reply-form {
+  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+}
+
+.reply-input {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  padding: 0.6rem;
+  resize: vertical;
+  min-height: 70px;
+  margin-bottom: 0.6rem;
+}
+
+.reply-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.reply-form-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.reply-thread {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.reply-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reply-content {
+  flex-grow: 1;
+  font-size: 0.85rem;
+}
+
+.reply-header b {
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.reply-header small {
+  color: var(--text-subtle);
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.reply-content p {
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
 /* Patch Card & Code Viewer */
 .patch-card {
   background: var(--code-bg);

@@ -119,6 +119,53 @@ function createFindingCard(comment) {
     resolveBtn.disabled = true;
   });
 
+  const replyBtn = node.querySelector('.reply-btn');
+  const findingBody = node.querySelector('.finding-body');
+
+  replyBtn.addEventListener('click', () => {
+    let replyForm = findingBody.querySelector('.reply-form');
+    if (replyForm) {
+      replyForm.remove();
+      return;
+    }
+
+    replyForm = document.createElement('div');
+    replyForm.className = 'reply-form';
+    replyForm.innerHTML = `
+      <textarea class="reply-input" placeholder="Write a reply or follow-up note to ReviewMint..."></textarea>
+      <div class="reply-form-actions">
+        <button class="btn-primary send-reply-btn" style="padding: 0.4rem 0.85rem; font-size: 0.8rem;">Post Reply</button>
+        <button class="btn-secondary cancel-reply-btn">Cancel</button>
+      </div>
+    `;
+
+    findingBody.appendChild(replyForm);
+
+    const replyInput = replyForm.querySelector('.reply-input');
+    replyInput.focus();
+
+    replyForm.querySelector('.cancel-reply-btn').addEventListener('click', () => replyForm.remove());
+
+    replyForm.querySelector('.send-reply-btn').addEventListener('click', () => {
+      const text = replyInput.value.trim();
+      if (!text) return;
+
+      const thread = document.createElement('div');
+      thread.className = 'reply-thread';
+      thread.innerHTML = `
+        <div class="reply-avatar">MC</div>
+        <div class="reply-content">
+          <div class="reply-header"><b>mia-chen</b> <small>Just now</small></div>
+          <p>${escapeHtml(text)}</p>
+        </div>
+      `;
+
+      replyForm.remove();
+      findingBody.appendChild(thread);
+      replyBtn.textContent = 'Replied ✓';
+    });
+  });
+
   return node;
 }
 
