@@ -8,16 +8,7 @@ Track: Developer Tools — OpenAI Build Week 2026
 
 ## Demo Video
 
-[![Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
-
 - **Watch on YouTube:** [https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
-- **Voiceover Outline (<=3 min):**
-  - `0:00 - 0:15` **Hook:** ReviewMint agentic PR reviewer in action.
-  - `0:15 - 0:45` **The Problem:** Senior eng review bottlenecks & idle pull requests.
-  - `0:45 - 1:45` **Live Demo:** Webhook wake, test runner, full-file diff reasoning, line comments & one-click patch generation.
-  - `1:45 - 2:25` **Codex Workflow:** Building ReviewMint with Codex step-by-step (`/feedback` Session ID).
-  - `2:25 - 2:45` **GPT-5.6 Integration:** Long-context frontier model reasoning over diffs, test logs & team style conventions.
-  - `2:45 - 3:00` **Conclusion & Value:** Real agentic autonomy, 60% faster PR review cycles.
 
 ---
 
