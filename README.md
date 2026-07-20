@@ -93,23 +93,35 @@ const review = await openai.chat.completions.create({
 
 ## Try It / Run Locally
 
-### Supported Platforms
-macOS, Linux, Windows (Node.js 20+).
+### Prerequisites & Supported Platforms
+- **Supported Platforms:** macOS, Linux, Windows
+- **Runtime:** Node.js 20+
+- **Credentials:** None required! The application includes a self-contained, offline-testable demo mode with pre-populated diffs, test outputs, and team rules.
 
 ### Quick Start
+
 ```bash
+# 1. Clone repository
+git clone https://github.com/nandanpkng/reviewmint.git
 cd reviewmint
-pnpm start
-# Open http://localhost:3000
+
+# 2. Start local server (zero npm dependencies required)
+pnpm start   # or npm start / node src/server.js
+
+# 3. Open in browser
+# http://localhost:3000
 ```
 
-### Run Tests
+### Self-Contained Judge Walkthrough
+1. Navigate to `http://localhost:3000` in your web browser.
+2. Inspect the **Pull Request Overview** showing diff hunks, failing test signals, and learned team style rules.
+3. Review the line-level AI feedback cards and generated sibling patch diff.
+4. Click **Apply Fix** to verify patch merging and test suite re-validation.
+
+### Run Automated Tests
 ```bash
-pnpm test
+pnpm test   # or npm test / node --test
 ```
-
-### Judge-Testable Path
-Run `pnpm start` and navigate to `http://localhost:3000`. The local demo path uses pre-populated representative pull request data, failing test signals, line-level feedback, and verified patch output without requiring external API keys.
 
 ---
 
