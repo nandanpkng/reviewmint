@@ -52,9 +52,6 @@ ReviewMint was built 100% from scratch using OpenAI Codex as the primary softwar
 5. `"Create a frontend single-page app matching GitHub's dark theme that visualizes PR review cards, diff line comments, and one-click patch application."`
 6. `"Write automated unit tests verifying signature security, patch generation, and convention learning."`
 
-**Primary Build Session ID:** `cs_buildweek2026_reviewmint_primary`
-*(Submit `/feedback Codex Session ID` from primary build thread in Devpost submission form)*
-
 ---
 
 ## GPT-5.6 Integration
