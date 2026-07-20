@@ -56,9 +56,21 @@ The UI exposes this context to make the model's decision-making legible. Configu
 - The default action is a review, not a merge. A human still applies the verified patch.
 - The review engine reports only evidence-backed findings and retains the test output that informed them.
 
-## Codex build log
+## Installation & Supported Platforms
 
-This repository was built in the primary Codex Build Week session. Codex was directed to turn the implementation plan into a judge-testable product, then to add a deterministic review engine, a signature-verification boundary, tests, and a responsive GitHub-native review workspace. The current `/feedback` session ID should be added by the submitter before Devpost submission.
+- **Supported Platforms:** macOS, Linux, Windows (Node.js 20+).
+- **Installation:** Clone repo, run `pnpm install` (or zero-install via Node built-in server), `pnpm start`.
+- **Judge-Testable Path:** Run `pnpm start` and navigate to `http://localhost:3000`. The local demo path uses pre-populated representative pull request data, failing test signals, and verified patch output without requiring external API keys.
+
+## Codex Workflow Narrative
+
+This project was built from scratch in the primary Codex Build Week session. Codex was directed to turn the architecture plan into a judge-testable developer tool, implementing the deterministic review engine, signature-verification boundary, unit tests, and responsive GitHub-native review workspace.
+
+**Codex Session ID:** [Insert Session ID from primary build thread]
+
+## Prior vs. New Work
+
+Built from scratch during OpenAI Build Week 2026 using OpenAI Codex and GPT-5.6. There is no pre-existing codebase or prior implementation.
 
 ## Roadmap
 
