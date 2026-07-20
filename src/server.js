@@ -6,12 +6,12 @@ import { reviewPullRequest } from './services/reviewer.js';
 import { demoPullRequest } from './services/demo-data.js';
 
 const port = Number(process.env.PORT || 3000);
-const publicDir = fileURLToPath(new URL('../public/', import.meta.url));
+const publicDir = fileURLToPath(new URL('./public/', import.meta.url));
 const mimeTypes = { '.css': 'text/css', '.js': 'application/javascript', '.svg': 'image/svg+xml', '.json': 'application/json', '.html': 'text/html' };
 
 function send(res, status, body, type = 'application/json') {
   res.writeHead(status, { 'content-type': `${type}; charset=utf-8`, 'cache-control': 'no-store' });
-  res.end(typeof body === 'string' ? body : JSON.stringify(body));
+  res.end(Buffer.isBuffer(body) || typeof body === 'string' ? body : JSON.stringify(body));
 }
 
 async function bodyOf(req) {

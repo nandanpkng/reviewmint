@@ -1,29 +1,191 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>ReviewMint - PR Review</title><link rel="stylesheet" href="/styles.css" /></head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReviewMint · AI Code Reviewer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
   <body>
-    <header><a class="brand" href="#"><span class="brand-mark">R</span> ReviewMint</a><div class="header-actions"><span class="status-dot"></span><span>Watching <b>orbit-labs/console</b></span><button class="ghost" id="rerun">Re-run review</button></div></header>
+    <header>
+      <a class="brand" href="#">
+        <span class="brand-mark">R</span> ReviewMint
+      </a>
+      <div class="header-actions">
+        <span class="status-dot"></span>
+        <span>Watching <b>orbit-labs/console</b></span>
+        <button class="ghost-btn" id="rerun">
+          <span>⚡</span> Re-run Review
+        </button>
+      </div>
+    </header>
+
     <main>
+      <!-- PR Heading Section -->
       <section class="pr-heading">
-        <div><div class="eyebrow">PULL REQUEST #482</div><h1>Add invite-only workspace onboarding</h1><p><span class="avatar">MC</span> <b>mia-chen</b> wants to merge 3 commits into <code>main</code> from <code>feature/invite-onboarding</code></p></div>
-        <div class="agent-status"><span class="spark">✦</span><div><b>ReviewMint reviewed this PR</b><small id="reviewed-at">Using full-file context, test output & team style</small></div></div>
+        <div>
+          <div class="eyebrow">PULL REQUEST #482</div>
+          <h1>Add invite-only workspace onboarding</h1>
+          <div class="pr-meta">
+            <span class="avatar">MC</span>
+            <b>mia-chen</b> wants to merge 3 commits into <code>main</code> from <code>feature/invite-onboarding</code>
+          </div>
+        </div>
+        <div class="agent-badge">
+          <span class="spark">✦</span>
+          <div>
+            <b style="display: block; color: #fff; font-size: 0.95rem;">ReviewMint Autonomous Audit</b>
+            <small id="reviewed-at" style="color: var(--text-subtle);">Full file context &amp; style calibrated</small>
+          </div>
+        </div>
       </section>
-      <div class="layout">
+
+      <div class="grid-layout">
+        <!-- Main Content Column -->
         <section class="primary">
-          <article class="verdict-card" id="verdict-card"><div class="verdict-top"><div><span class="badge warning" id="verdict">REQUEST CHANGES</span><h2 id="summary">One blocking reliability issue found.</h2></div><div class="risk"><span>RISK SCORE</span><strong id="risk-score">8<em>/10</em></strong></div></div><p>ReviewMint ran the test suite, inspected all changed files, and calibrated feedback to your team’s review conventions.</p><div class="metrics"><div><b id="files-count">3</b><span>files reviewed</span></div><div><b id="comments-count">2</b><span>actionable comments</span></div><div><b class="red">-1.4%</b><span>coverage delta</span></div><div><b>1</b><span>verified patch</span></div></div></article>
-          <section class="section-title"><div><h2>Review findings</h2><p>Only high-confidence issues that need a human’s attention.</p></div><span class="count" id="finding-count">2 findings</span></section>
+          <!-- Verdict Card -->
+          <article class="card verdict-card" id="verdict-card">
+            <div class="verdict-header">
+              <div>
+                <span class="badge warning" id="verdict">REQUEST CHANGES</span>
+                <h2 id="summary">One blocking reliability issue found.</h2>
+              </div>
+              <div class="risk-box">
+                <span>RISK SCORE</span>
+                <strong id="risk-score">8<em>/10</em></strong>
+              </div>
+            </div>
+            <p class="verdict-desc">
+              ReviewMint executed full test suites, analyzed boundary edge-cases across changed modules, and cross-referenced team style conventions.
+            </p>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <b id="files-count">3</b>
+                <span>files reviewed</span>
+              </div>
+              <div class="metric-item">
+                <b id="comments-count">2</b>
+                <span>actionable findings</span>
+              </div>
+              <div class="metric-item">
+                <b class="red" id="coverage-delta">-1.4%</b>
+                <span>coverage delta</span>
+              </div>
+              <div class="metric-item">
+                <b class="green">1</b>
+                <span>verified patch</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Changed Files Interactive Explorer -->
+          <div class="section-header">
+            <div>
+              <h2>Changed Files &amp; Inspection</h2>
+              <p>Select a file to inspect full context and inline findings</p>
+            </div>
+          </div>
+          <div class="files-tab-bar" id="files-tab-bar">
+            <!-- Tabs injected dynamically -->
+          </div>
+          <div class="code-preview-window">
+            <div class="code-header" id="code-filename">src/routes/invitations.ts</div>
+            <pre class="code-content" id="code-content"></pre>
+          </div>
+
+          <!-- Review Findings Section -->
+          <div class="section-header">
+            <div>
+              <h2>Review Findings</h2>
+              <p>High-confidence findings requiring attention</p>
+            </div>
+            <span class="count-pill" id="finding-count">2 findings</span>
+          </div>
           <div id="findings"></div>
-          <section class="section-title"><div><h2>Suggested patch</h2><p>Generated from the failing test and verified against the branch.</p></div></section>
-          <article class="patch-card" id="patch"></article>
+
+          <!-- Verified Patch Card -->
+          <div class="section-header">
+            <div>
+              <h2>AI Verified Patch</h2>
+              <p>Generated &amp; validated against existing test suite</p>
+            </div>
+          </div>
+          <article class="patch-card" id="patch">
+            <!-- Patch content injected via JS -->
+          </article>
         </section>
+
+        <!-- Sidebar Column -->
         <aside>
-          <section class="side-card"><div class="side-title"><h3>Checks</h3><span class="passed">1 passed · 1 failed</span></div><div id="checks"></div></section>
-          <section class="side-card"><div class="side-title"><h3>Learned review style</h3><span class="learned">Personalized</span></div><p class="style-summary" id="style-summary"></p><ul id="conventions"></ul><button class="text-button">View style profile →</button></section>
-          <section class="side-card details"><h3>Review context</h3><div><span>Files</span><b>3 changed</b></div><div><span>Full-file context</span><b>Enabled</b></div><div><span>Engine</span><b>GPT-5.6</b></div><div><span>Sandbox</span><b>Isolated</b></div></section>
+          <!-- Checks Card -->
+          <section class="side-card">
+            <div class="side-title">
+              <h3>CI Checks</h3>
+              <span class="side-tag passed" id="checks-status-tag">1 passed · 1 failed</span>
+            </div>
+            <div id="checks"></div>
+          </section>
+
+          <!-- Learned Review Style Card -->
+          <section class="side-card">
+            <div class="side-title">
+              <h3>Learned Review Style</h3>
+              <span class="side-tag learned">Personalized</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;" id="style-summary"></p>
+            <ul class="convention-list" id="conventions"></ul>
+          </section>
+
+          <!-- System Context Card -->
+          <section class="side-card">
+            <h3 style="margin-bottom: 0.75rem;">Engine Context</h3>
+            <div class="details-row">
+              <span>Files</span>
+              <b id="files-meta">3 changed</b>
+            </div>
+            <div class="details-row">
+              <span>Full-file context</span>
+              <b>Enabled</b>
+            </div>
+            <div class="details-row">
+              <span>Engine</span>
+              <b id="engine-meta">GPT-5.6</b>
+            </div>
+            <div class="details-row">
+              <span>Sandbox</span>
+              <b>Isolated Node.js VM</b>
+            </div>
+          </section>
         </aside>
       </div>
     </main>
-    <template id="finding-template"><article class="finding"><div class="severity"></div><div class="finding-content"><div class="finding-heading"><div><span class="file"></span><span class="line"></span></div><span class="severity-label"></span></div><h3></h3><p></p><div class="suggestion"><b>Suggested direction</b><span></span></div><div class="finding-actions"><button class="reply">Reply</button><button class="resolve">Resolve conversation</button></div></div></article></template>
+
+    <!-- Finding Template -->
+    <template id="finding-template">
+      <article class="finding-card">
+        <div class="severity-bar"></div>
+        <div class="finding-body">
+          <div class="finding-top">
+            <div class="finding-location">
+              <span class="file"></span>
+              <span class="line"></span>
+            </div>
+            <span class="severity-label"></span>
+          </div>
+          <h3></h3>
+          <p></p>
+          <div class="suggestion-box">
+            <b>Suggested Direction</b>
+            <span></span>
+          </div>
+          <div class="finding-actions">
+            <button class="btn-secondary reply-btn">Reply</button>
+            <button class="btn-secondary resolve-btn">Resolve Conversation</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
     <script src="/app.js"></script>
   </body>
 </html>
