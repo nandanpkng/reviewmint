@@ -5,3 +5,12 @@ coverage/
 dist/
 .DS_Store
 *.log
+
+# Exclude video artifacts & dummy video recordings (do not push videos)
+video_dummy/
+video_demo/
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
