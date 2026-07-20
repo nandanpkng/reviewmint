@@ -1,0 +1,13 @@
+{
+  "name": "reviewmint",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A proactive, GitHub-native pull request reviewer",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" }
+}

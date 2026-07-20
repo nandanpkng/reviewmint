@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>ReviewMint - PR Review</title><link rel="stylesheet" href="/styles.css" /></head>
+  <body>
+    <header><a class="brand" href="#"><span class="brand-mark">R</span> ReviewMint</a><div class="header-actions"><span class="status-dot"></span><span>Watching <b>orbit-labs/console</b></span><button class="ghost" id="rerun">Re-run review</button></div></header>
+    <main>
+      <section class="pr-heading">
+        <div><div class="eyebrow">PULL REQUEST #482</div><h1>Add invite-only workspace onboarding</h1><p><span class="avatar">MC</span> <b>mia-chen</b> wants to merge 3 commits into <code>main</code> from <code>feature/invite-onboarding</code></p></div>
+        <div class="agent-status"><span class="spark">✦</span><div><b>ReviewMint reviewed this PR</b><small id="reviewed-at">Using full-file context, test output & team style</small></div></div>
+      </section>
+      <div class="layout">
+        <section class="primary">
+          <article class="verdict-card" id="verdict-card"><div class="verdict-top"><div><span class="badge warning" id="verdict">REQUEST CHANGES</span><h2 id="summary">One blocking reliability issue found.</h2></div><div class="risk"><span>RISK SCORE</span><strong id="risk-score">8<em>/10</em></strong></div></div><p>ReviewMint ran the test suite, inspected all changed files, and calibrated feedback to your team’s review conventions.</p><div class="metrics"><div><b id="files-count">3</b><span>files reviewed</span></div><div><b id="comments-count">2</b><span>actionable comments</span></div><div><b class="red">-1.4%</b><span>coverage delta</span></div><div><b>1</b><span>verified patch</span></div></div></article>
+          <section class="section-title"><div><h2>Review findings</h2><p>Only high-confidence issues that need a human’s attention.</p></div><span class="count" id="finding-count">2 findings</span></section>
+          <div id="findings"></div>
+          <section class="section-title"><div><h2>Suggested patch</h2><p>Generated from the failing test and verified against the branch.</p></div></section>
+          <article class="patch-card" id="patch"></article>
+        </section>
+        <aside>
+          <section class="side-card"><div class="side-title"><h3>Checks</h3><span class="passed">1 passed · 1 failed</span></div><div id="checks"></div></section>
+          <section class="side-card"><div class="side-title"><h3>Learned review style</h3><span class="learned">Personalized</span></div><p class="style-summary" id="style-summary"></p><ul id="conventions"></ul><button class="text-button">View style profile →</button></section>
+          <section class="side-card details"><h3>Review context</h3><div><span>Files</span><b>3 changed</b></div><div><span>Full-file context</span><b>Enabled</b></div><div><span>Engine</span><b>GPT-5.6</b></div><div><span>Sandbox</span><b>Isolated</b></div></section>
+        </aside>
+      </div>
+    </main>
+    <template id="finding-template"><article class="finding"><div class="severity"></div><div class="finding-content"><div class="finding-heading"><div><span class="file"></span><span class="line"></span></div><span class="severity-label"></span></div><h3></h3><p></p><div class="suggestion"><b>Suggested direction</b><span></span></div><div class="finding-actions"><button class="reply">Reply</button><button class="resolve">Resolve conversation</button></div></div></article></template>
+    <script src="/app.js"></script>
+  </body>
+</html>
